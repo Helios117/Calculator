@@ -12,6 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: navy;
 }
 
 .calculator {
@@ -19,6 +20,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: black;
+    gap: 16px;
+    padding: 16px;
+}
+
+.output {
+    background-color: white;
+    width: 100%;
+    text-align: right;
+}
+
+.output .result {
+    font-size: xx-large;
 }
 
 .input {
@@ -28,8 +42,16 @@ body {
 }
 
 .operator, .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 64px;
     width: 64px;
     border-radius: 50%;
+    background-color: white;
+    font-size: x-large;
+}
 
+.operator {
+    background-color: lightsalmon;
 }
