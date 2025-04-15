@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function click(event) {
         const val = event.target.textContent;
         if (event.target.className!='action'){
-            if ((expr === '0' && val != '.') || (expr === 'Error') || (expr === 'Infinity'))
+            if ((expr === '0') || (expr === 'Error') || (expr === 'Infinity'))
                 expr = val;
             else expr += val;
         }
@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
         else if (val === 'DEL'){
             if ((expr === 'Error') || (expr === 'Infinity'))
                 expr = 0;
-            else
+            else if (expr.length > 1)
                 expr = expr.slice(0, -1);
+            else
+                expr = 0;
         }
         else if (val === '='){
             try{
